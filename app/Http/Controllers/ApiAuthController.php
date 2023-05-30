@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginRequest;
-use App\Http\Resource\LoginResource;
+use App\Http\Resources\LoginResource;
 
 class ApiAuthController extends Controller
 {
