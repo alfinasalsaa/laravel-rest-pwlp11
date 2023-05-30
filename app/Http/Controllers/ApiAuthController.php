@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginRequest;
 use App\Http\Resources\LoginResource;
+use App\Http\Controllers\MahasiswaController;
 
 class ApiAuthController extends Controller
 {
@@ -30,5 +31,13 @@ class ApiAuthController extends Controller
             'user' => $user,
             'token' => $token,
         ],200);
+    }
+
+    public function logout(Request $request){
+        #hapus
+        $request->user()->tokens()->delete();
+
+        #response
+        return response()->noContent();
     }
 }
