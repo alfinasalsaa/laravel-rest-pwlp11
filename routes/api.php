@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return "hello word";
 // });
 
-Route::apiResource('/mahasiswa', MahasiswaController::class);
+// Route::apiResource('/mahasiswa', MahasiswaController::class);
+
+Route::post('/login',[ApiAuthController::class,'login']);
